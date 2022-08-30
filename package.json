@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/snezhd/bookstore/issues"
   },
-  "homepage": "https://github.com/snezhd/bookstore#readme"
+  "homepage": "https://github.com/snezhd/bookstore#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
