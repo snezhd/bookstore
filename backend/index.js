@@ -16,12 +16,13 @@ app.get('/', (req, res) => {
 app.get('/api/books', (req, res) => res.json(books));
 
 app.get('/api/books/:id', (req, res) => {
-  const found = books.some((books) => books.id === parseInt(req.params.id));
+  const bookId = req.params.id;
+  const result = books.find((books) => books.id === parseInt(bookId));
 
-  if(found) {
-    res.json(books.filter((books) => books.id === parseInt(req.params.id)));
+  if(result) {
+    res.json(result);
   } else {
-    res.status(404).send(`No book with the id of ${req.params.id}`);
+    res.status(404).json({message: `Book with id of ${bookId} not found`});
   }
 })
 
