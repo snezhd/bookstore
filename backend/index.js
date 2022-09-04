@@ -61,6 +61,14 @@ app.post('/api/books', (req, res) => {
   res.status(201).json(newBook);
 });
 
+app.delete('/api/books/:id', (req, res) => {
+  const bookId = req.params.id;
+  const index = books.findIndex((book) => book.id === parseInt(bookId));
+  books.splice(index, 1);
+
+  res.sendStatus(204);
+});
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 })
