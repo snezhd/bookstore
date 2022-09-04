@@ -41,7 +41,7 @@ app.post('/api/books', (req, res) => {
     }
   }
 
-  if(missingProperty.length > 0) {
+  if (missingProperty.length > 0) {
     sendError(res, 400, `The ${missingProperty} are missing`);
   }
 
@@ -76,7 +76,7 @@ app.put('/api/books/:id', (req, res) => {
   ];
 
   const missingProperty = [];
-  for(let property of required) {
+  for (let property of required) {
     if(!data.hasOwnProperty(property)) {
         missingProperty.push(property);
     }
@@ -104,6 +104,29 @@ app.put('/api/books/:id', (req, res) => {
   res.status(200).json(updatedBook);
 })
 
+
+app.patch('/api/books/:id', (req, res) => {
+  const data = req.body;
+  const bookId = req.params.id;
+  const currentBook = books.find((books) => books.id === parseInt(bookId));
+
+  if (!currentBook) {
+    return res.sendStatus(204);
+  }
+
+  const all = [
+    'title', 'author', 'dateOfPublishing', 'image',
+    'description', 'pages', 'price', 'read'
+  ];
+
+  for (let property of all) {
+    if (data.hasOwnProperty(property)) {
+      currentBook[property] = data[property];
+    }
+  }
+
+  res.status(200).json(currentBook);
+})
 
 app.delete('/api/books/:id', (req, res) => {
   const bookId = req.params.id;
