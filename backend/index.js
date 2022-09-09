@@ -1,9 +1,11 @@
 const express = require('express');
 const books = require('./books');
+const cors = require('cors')
 
 const app = express();
 const port = 3000;
 
+app.use(cors());
 app.use(express.json()) ;
 app.use((req, res, next) => {
   console.log(`Request ${req.method} ${req.originalUrl}`);

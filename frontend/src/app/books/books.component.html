@@ -25,7 +25,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let book of books">
+      <tr *ngFor="let book of filteredBooks">
         <td>
           <img  *ngIf="showImage"
             [src]="book.image"

@@ -24,7 +24,7 @@ const books = [
     title: 'That Will Never Work',
     author: 'Marc Randolph',
     dateOfPublishing: '2019',
-    image: 'https://www.amazon.co.uk/That-Will-Never-Work-Netflix-ebook/dp/B07QRVWBX2',
+    image: 'https://m.media-amazon.com/images/I/41ugV6z-6fL.jpg',
     description: 'In the tradition of Phil Knight\'s Shoe Dog comes the incredible untold story of how Netflix went from concept to company - all revealed by co-founder and first CEO Marc Randolph.',
     pages: '337',
     price: 20
@@ -34,7 +34,7 @@ const books = [
     title: 'The Airbnb Story',
     author: 'Leigh Gallagher',
     dateOfPublishing: '2017',
-    image: 'https://www.amazon.com/Airbnb-Story-Ordinary-Disrupted-Controversy/dp/0544952669',
+    image: 'https://images-na.ssl-images-amazon.com/images/I/81OEL4kJFcL.jpg',
     description: 'An investigative behind-the-scenes story of the creation and growth of the highly disruptive start-up Airbnb.',
     pages: '256',
     price: 21.40
@@ -44,7 +44,7 @@ const books = [
     title: 'Shoe Dog',
     author: 'Phil Knight',
     dateOfPublishing: '2016',
-    image: 'https://www.amazon.com/Shoe-Dog-Memoir-Creator-Nike-ebook/dp/B0176M1A44',
+    image: 'https://m.media-amazon.com/images/I/41k+WVPLwZL.jpg',
     description: 'In this instantand tenacious New York Times bestseller, Nike founder and board chairman Phil Knight “offers a rare and revealing look at the notoriously media-shy man behind the swoosh” (Booklist, starred review), illuminating his company’s early days as an intrepid start-up and its evolution into one of the world’s most iconic, game-changing, and profitable brands.',
     pages: '399',
     price: 15.95
