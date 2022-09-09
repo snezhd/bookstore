@@ -1,12 +1,21 @@
 <div>
-  <h2>Hello to the Books table</h2>
+  <h2>{{ tableTitle }}</h2>
 
-  <table>
+  <div>
+    <p class="align-row">Filter by:</p>
+    <input
+      type="text"
+      [(ngModel)]="listFilter"
+    >
+  </div>
+
+  <span class="bold">Filtered by:  {{ listFilter }}</span>
+  <table *ngIf="books.length">
     <thead>
       <tr>
         <th>
-          <button>
-            Show Cover
+          <button (click)="toggleImage()">
+            {{ showImage ? 'Hide' : 'Show' }} Cover
           </button>
         </th>
         <th>Title</th>
@@ -16,7 +25,18 @@
       </tr>
     </thead>
     <tbody>
-
+      <tr *ngFor="let book of books">
+        <td>
+          <img  *ngIf="showImage"
+            [src]="book.image"
+            [title]="book.title"
+          >
+        </td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.pages }}</td>
+        <td>{{ book.price | currency:'USD':'symbol':'1.2-2' }}</td>
+      </tr>
     </tbody>
   </table>
 </div>
