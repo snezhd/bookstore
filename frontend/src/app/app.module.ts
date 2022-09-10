@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
+import { BookDetailComponent } from './books/book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksComponent,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,

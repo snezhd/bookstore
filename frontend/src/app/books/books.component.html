@@ -32,7 +32,11 @@
             [title]="book.title"
           >
         </td>
-        <td>{{ book.title }}</td>
+        <td>
+          <a [routerLink]="['/books', book.id]">
+            {{ book.title }}
+          </a>
+        </td>
         <td>{{ book.author }}</td>
         <td>{{ book.pages }}</td>
         <td>{{ book.price | currency:'USD':'symbol':'1.2-2' }}</td>
