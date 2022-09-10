@@ -1,3 +1,35 @@
-<div>
+<header>
     <h2>{{ pageTitle }}</h2>
-</div>
+</header>
+
+<table *ngIf="book">
+    <thead>
+      <tr>
+        <th>Cover</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <img
+            [src]="book.image"
+            [title]="book.title"
+          >
+        </td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.pages }}</td>
+        <td>{{ book.price | currency:'USD':'symbol':'1.2-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<section>
+  <p>Date of publishing: {{ book?.dateOfPublishing }}</p>
+  <h4>Description</h4>
+  <p>{{ book?.description }}</p>
+</section>

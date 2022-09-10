@@ -18,6 +18,12 @@ export class BookService {
     )
   }
 
+  getSpecificBook(id: number): Observable<IBook> {
+    return this._http.get<IBook>(`${this.baseUrl}/api/books/${id}`).pipe(
+      catchError(this._handleError)
+    )
+  }
+
   private _handleError(err: HttpErrorResponse) {
     let errorMessage = '';
 
