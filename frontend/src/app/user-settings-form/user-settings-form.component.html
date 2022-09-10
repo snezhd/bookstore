@@ -1,37 +1,48 @@
 <div class="align">
   <h2>User Settings</h2>
 
-  <form class="column">
+  <form #form="ngForm" class="column" (ngSubmit)="onSubmit(form)">
     <div class="m-1">
-      <label for="name" class="m-1">Name</label>
-      <input id="name" placeholder="Name" />
+      <label for="user-name" class="m-1">Name</label>
+      <input id="ueser-name" placeholder="Name" name="name" [(ngModel)]="userSettings.name"
+        required #nameField="ngModel"
+        [class.field-error]="form.submitted && nameField.invalid"
+      />
     </div>
     <div class="m-1">
-      <label for="check">
+      <label for="offer-check">
         Email Special Offer
-      <input id="check" type="checkbox" />
+      <input id="offer-check" type="checkbox" name="checkbox" [(ngModel)]="userSettings.emailOffers" />
       </label>
     </div>
 
     <h4>User Interface Style</h4>
     <div class="m-1">
-      <label for="light">
-        <input id="light" type="radio" name="radio"/>
+      <label class="m-r" for="light">
         Light
+        <input
+          id="light" value="light"
+          type="radio" name="radio" [(ngModel)]="userSettings.style" />
       </label>
-      <label for="medium">
-        <input id="medium" type="radio" name="radio" />
+
+      <label class="m-r" for="medium">
         Medium
+        <input
+          id="medium" value="medium"
+          type="radio" name="radio" [(ngModel)]="userSettings.style" />
       </label>
-      <label for="dark">
-        <input id="dark" type="radio" name="radio" />
+
+      <label class="m-r" for="dark">
         Dark
+        <input
+          id="dark" value="dark"
+          type="radio" name="radio" [(ngModel)]="userSettings.style" />
       </label>
     </div>
 
     <div class="m-1">
       <label class="m-1" for="subscription">Subscription Type</label>
-      <select id="subscription">
+      <select id="subscription" name="subscription" [(ngModel)]="userSettings.subscription">
         <option>Weekly</option>
         <option>Monthly</option>
         <option>Yearly</option>

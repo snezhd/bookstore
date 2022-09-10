@@ -2,10 +2,18 @@
   margin: 1rem;
 }
 
+.m-r {
+  margin-right: 1rem;
+}
+
 .align {
   text-align: center;
 }
 
 .column {
   display: inline-grid;
+}
+
+.field-error {
+  border: 2px solid red;
 }
